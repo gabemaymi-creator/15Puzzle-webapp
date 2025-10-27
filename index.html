@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15 Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>15 Puzzle</h1>
+      <div id="hud">
+        <span>Moves: <span id="moves">0</span></span>
+        <span>Time: <span id="time">00:00</span></span>
+      </div>
+      <div id="theme-menu">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select">
+          <option value="default">Default</option>
+          <option value="dark">Dark</option>
+          <option value="pastel">Pastel</option>
+          <option value="high-contrast">High Contrast</option>
+          <option value="modern-blue">Modern Blue</option>
+          <option value="classic-plastic">Classic Plastic</option>
+          <option value="wood">Wood</option>
+        </select>
+      </div>
+      <div id="controls">
+        <button id="shuffle">Shuffle</button>
+        <button id="reset">Reset</button>
+      </div>
+    </header>
+
+    <section id="board" role="grid" aria-label="15 Puzzle">
+      <!-- Tiles will be rendered here by app.js -->
+    </section>
+
+    <footer id="status" aria-live="polite"></footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
