@@ -1,54 +1,42 @@
-# 15 Puzzle
+# 15 Puzzle Web App
 
-A modern, accessible, and highly customizable implementation of the classic 15 Puzzle game using vanilla JavaScript, HTML, and CSS.
+A modern, accessible, and highly customizable browser-based take on the classic 15 Puzzle. Built with vanilla JavaScript, HTML, and CSS, it focuses on smooth interactions, responsive layout, and inclusive design.
 
 ## Features
 - 4x4 sliding puzzle with numbers 1–15 and one empty space
 - Animated tile movement with smooth transitions
-- Click any tile in the same row or column as the empty space to slide all tiles between toward the blank
+- Click any tile in the same row or column as the empty space to slide the intervening tiles
 - Keyboard controls:
   - Arrow keys: move adjacent tiles
-  - Shift + Arrow keys: slide entire row or column toward the blank
-- Move counter and timer
-- Shuffle and Reset controls
-- Theme switcher with multiple color schemes:
-  - Modern Blue, Classic Plastic, Wood, Pastel, High Contrast, Dark, and more
-- Custom color variables for gamespace, board, tiles, and accents—each theme is visually distinct
-- Invisible empty tile: the empty space always blends perfectly with the board background
-- Responsive, modern UI with improved layout and color contrast
-- Accessible: ARIA roles, keyboard navigation, and focus management
+  - Shift + Arrow keys: slide an entire row or column toward the blank
+- Move counter and timer HUD
+- Shuffle and Reset controls for quick restarts
+- Theme switcher with multiple color schemes
+- Custom CSS variables for board, tiles, and accents so every theme feels distinct
+- Invisible empty tile that blends seamlessly with each theme
+- Responsive layout that adapts to phones, tablets, and desktops
+- Accessibility support with ARIA roles, focus management, and keyboard navigation
 
 ## Design Workflow
-1. **HTML**: Semantic structure with IDs for dynamic elements (board, moves, time, controls, status, theme menu)
-2. **CSS**: Theming with CSS variables, animated transitions, modern grid/absolute layout, and accessible color contrast
+1. **HTML**: Semantic structure with landmarks and IDs for dynamic elements such as the board, move counter, timer, controls, status messages, and theme menu.
+2. **CSS**: Theming via CSS variables, animated transitions, and a mix of grid and absolute positioning to keep the puzzle centered and responsive.
 3. **JavaScript**:
-   - Initializes game state and DOM references on load
-   - Handles shuffling, move logic, win detection, and rendering
-   - Supports both single-tile and multi-tile sliding (row/column)
-   - Updates UI, accessibility attributes, and theme switching dynamically
+   - Initializes game state and caches DOM references on load
+   - Handles shuffling, solvability checks, move validation, and rendering
+   - Supports both single-tile and multi-tile sliding (entire row/column)
+   - Updates UI text, aria attributes, and theme toggles dynamically
 
 ## Getting Started
-1. Open `index.html` in your browser.
-2. Select a theme from the menu (optional).
-3. Click Shuffle to start playing.
-4. Use mouse or keyboard to solve the puzzle!
+1. Open `index.html` in a modern browser.
+2. Pick a theme (optional) to match your style.
+3. Hit Shuffle to start a new puzzle.
+4. Use the mouse or keyboard to solve it as fast as you can.
 
-### Project Structure
-- `FifteenPuzzleApp.swift` – App entry point.
-- `ContentView.swift` – SwiftUI layout, controls, and theming.
-- `PuzzleViewModel.swift` – MVVM state management, timer, and victory handling.
-- `PuzzleBoard.swift` – Core puzzle logic (shuffle, solvability, move validation).
-- `PuzzleTheme.swift` / `PuzzleTile.swift` – Visual styling and presentation models.
-
-### Running on iPhone
-1. In Xcode, create a new **App** project named `FifteenPuzzle` targeting iOS 17 or later.
-2. Add the files under `ios/Sources` into the project (keep their folder structure).
-3. Ensure the deployment target is iOS 16+ and that "Use SwiftUI" is enabled.
-4. Build and run on the simulator or a connected device.
-5. The code locks iPhone orientation to portrait while allowing rotation on iPad; no additional Info.plist changes are required.
-6. Add your title artwork to the asset catalog as `PuzzleTitle` (or update `TitleImageView` in `ContentView.swift` to match your filename).
-
-The SwiftUI app has no package dependencies and can reuse the existing assets if you import them into the asset catalog. The puzzle logic was ported from the JavaScript original and preserves solvable shuffling, row/column sliding, and win detection.
+## Development Notes
+- The project has no build step—just open the HTML file to play.
+- Primary logic lives in `app.js`; presentation is handled by `style.css`.
+- Assets such as SVGs and icons are stored under `Assets/`.
+- Lightweight structure makes it easy to experiment with new controls or layouts.
 
 ---
 
