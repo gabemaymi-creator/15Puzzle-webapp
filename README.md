@@ -2,6 +2,8 @@
 
 A modern, accessible, and highly customizable browser-based take on the classic 15 Puzzle. Built with vanilla JavaScript, HTML, and CSS, it focuses on smooth interactions, responsive layout, and inclusive design.
 
+Vercel Deployment: https://15-puzzle-tau.vercel.app/
+
 ## Features
 - 4x4 sliding puzzle with numbers 1–15 and one empty space
 - Animated tile movement with smooth transitions
